@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # The purpose of this script is to power down the Pi properly through software
 # when the volume knob switch is turned to the off position
 
