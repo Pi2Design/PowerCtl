@@ -24,3 +24,15 @@ Once everything works then edit /etc/rc.local to run the file on boot by adding:
   /usr/bin/python /home/YOUR_USERNAME/PowerCtl/PowerCtl.py &
 
 before exit 0. YOUR_USERNAME will be the user into whose home directory the script has been cloned. It may be pi for raspbian, volumio for volumio, or a user name you have added. The ampersand at the end of the line is very important. It allows this script to run in the background. If it is not there, the login prompt may be blocked.
+
+For RuneAudio, copy PowerCtl/PowerCtl.service to /usr/lib/systemd/system/PowerCtl.service
+
+Then run: 
+
+systemctl start PowerCtl.service
+
+Test it out.  If the power knob is working well then enable for everyb boot with:
+
+systemctl enable PowerCtl.service
+
+

@@ -1,0 +1,12 @@
+[Unit]
+Description=Initiates shutdown of system when volume knob power is turned off
+Requires=
+After=
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /root/PowerCtl/PowerCtl.py
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target

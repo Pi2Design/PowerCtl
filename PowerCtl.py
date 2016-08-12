@@ -13,11 +13,12 @@ except RuntimeError:
 # This defines a loop to keep the script running
 def loop():
     while True:
-	time.sleep(10)
+        time.sleep(10)
 
 # This defines a function to run when interrupt is called
 def shutdown(pin):
-    call('poweroff', shell=False)
+    call(["/var/www/command/rune_shutdown", "poweroff"], shell=False)
+    call("poweroff", shell=False)
 
 GPIO.setmode(GPIO.BCM)
 # We drive GPIO 22 high to keep the power on
