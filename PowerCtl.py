@@ -10,6 +10,11 @@ try:
 except RuntimeError:
     print("ERROR importing RPi.GPIO! Please make sure it is installed and you have superuser privileges")
 
+# We also need to drive GPIO 13 low to disable the rolloff in the PCM5102 when playing 44.1Khz files
+# putting it here seems as good a place as any.
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(13, GPIO.OUT, initial=GPIO.LOW)
+
 # This defines a loop to keep the script running
 def loop():
     while True:
